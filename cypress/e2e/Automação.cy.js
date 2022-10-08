@@ -1,0 +1,42 @@
+/// <reference types="cypress" />
+
+describe('Compra no Site', ()=>{
+it('Quero comprar um produto especifico', ()=>{
+ cy.visit('https://www.amazon.com.br')
+ cy.get('#twotabsearchtextbox')
+ .click()
+ .type('microondas')
+ cy.get(':nth-child(5) > .s-suggestion-container > .s-suggestion').click()
+ cy.get('#search > div.s-desktop-width-max.s-desktop-content.s-opposite-dir.sg-row > div.s-matching-dir.sg-col-16-of-20.sg-col.sg-col-8-of-12.sg-col-12-of-16 > div > span:nth-child(4) > div.s-main-slot.s-result-list.s-search-results.sg-row > div:nth-child(2) > div > div > div > div > div.a-section.a-spacing-small.puis-padding-left-small.puis-padding-right-small > div.a-section.a-spacing-none.a-spacing-top-small.s-title-instructions-style > h2 > a > span').click()
+ cy.get('#add-to-cart-button').click()
+ cy.get('#nav-link-accountList-nav-line-1').click()
+ cy.get('#createAccountSubmit').click()
+ cy.get('#ap_customer_name')
+ .click()
+ .type('Andre Ribeiro Junior')
+ cy.get('#ap_email').click()
+.type('ander.2208@hotmail.com')
+cy.get('#ap_password').click()
+.type('123456789')
+cy.get('#ap_password_check').click()
+.type('123456789')
+cy.get('#continue').click()
+cy.get('#cvf-resend-link')
+.click()
+cy.get('#cvf-resend-link')
+.click()
+cy.get('#cvf-resend-link')
+.click()
+cy.get('#cvf-resend-link')
+.click()
+cy.get('#cvf-resend-link')
+.click()
+cy.get('#cvf-input-code').click()
+.type('12346')
+cy.get('#cvf-submit-otp-button > .a-button-inner > .a-button-input').click()
+cy.get('#cvf-arkose-frame').click()
+})
+
+
+
+})
